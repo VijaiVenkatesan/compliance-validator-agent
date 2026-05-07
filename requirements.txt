@@ -1,0 +1,38 @@
+# Core Agent Framework
+crewai==0.30.0
+crewai-tools==0.1.7
+
+# LangChain Core
+langchain-core==0.1.45
+langchain==0.1.17
+langchain-community==0.0.38
+
+# LLM Providers
+langchain-groq==0.1.5
+langchain-google-genai==0.0.4
+google-generativeai==0.3.2
+
+# Web & API
+flask==3.0.0
+requests==2.31.0
+
+# Data & Validation
+pydantic==2.7.0
+pandas==2.2.0
+pyyaml==6.0.1
+
+# Multi-format Support (PDF, Image, XML)
+pdfplumber>=0.9.0
+pytesseract>=0.3.10
+Pillow>=10.0.0
+xmltodict>=0.13.0
+
+# Utilities
+python-dotenv==1.0.1
+click==8.1.7
+structlog==24.1.0
+
+# OpenTelemetry
+opentelemetry-api==1.22.0
+opentelemetry-sdk==1.22.0
+opentelemetry-exporter-otlp-proto-http==1.22.0

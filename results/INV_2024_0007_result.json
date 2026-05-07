@@ -1,0 +1,93 @@
+{
+  "invoice_id": "INV-2024-0007",
+  "overall_decision": "ESCALATE_TO_HUMAN",
+  "compliance_score": 55.0,
+  "confidence": 0.85,
+  "requires_human_review": true,
+  "validation_results": {
+    "category_a_authenticity": {
+      "score": 2,
+      "max_score": 2,
+      "checks": {
+        "A1": true,
+        "A1_finding": "✓ Valid invoice number format",
+        "A1_confidence": 0.98,
+        "A2": true,
+        "A2_finding": "✓ No duplicates detected",
+        "A2_confidence": 0.98
+      }
+    },
+    "category_b_gst": {
+      "score": 0,
+      "max_score": 2,
+      "checks": {
+        "B1": false,
+        "B1_finding": "✕ Invalid GSTIN format",
+        "B1_confidence": 0.98,
+        "B7": false,
+        "B7_finding": "⚠ Rate mismatch or edge case",
+        "B7_confidence": 0.98
+      }
+    },
+    "category_c_arithmetic": {
+      "score": 0,
+      "max_score": 2,
+      "checks": {
+        "C1": false,
+        "C1_finding": "✕ Arithmetic mismatch",
+        "C1_confidence": 0.98,
+        "C2": true,
+        "C2_finding": "✓ Subtotal matches line sum",
+        "C2_confidence": 0.98
+      }
+    },
+    "category_d_tds": {
+      "score": 2,
+      "max_score": 2,
+      "checks": {
+        "D1": true,
+        "D1_finding": "✓ TDS applicable per vendor/description",
+        "D1_confidence": 0.98,
+        "D2": true,
+        "D2_finding": "✓ Section 194C @ 2.0%",
+        "D2_confidence": 0.98
+      }
+    },
+    "category_e_policy": {
+      "score": 0,
+      "max_score": 2,
+      "checks": {
+        "E1": true,
+        "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+        "E1_confidence": 0.98,
+        "E3": false,
+        "E3_finding": "⚠ Vendor requires verification",
+        "E3_confidence": 0.98
+      }
+    }
+  },
+  "tds_summary": {
+    "section": "194C",
+    "rate": 2.0,
+    "tds_on_gst": false
+  },
+  "gst_summary": {
+    "intra_inter": "inter"
+  },
+  "audit_trail": [
+    {
+      "step": "validation",
+      "agent": "Validator",
+      "reasoning": "✓ Invoice format valid, no duplicates; ✕ Invalid GSTIN format; ✕ Arithmetic mismatch detected; ✓ TDS applicable: 194C @ 2.0%; ⚠ Vendor not in approved list (may require review)",
+      "timestamp": "2026-05-07T07:50:52.572611Z",
+      "confidence": 0.99
+    },
+    {
+      "step": "resolution",
+      "agent": "Resolver",
+      "reasoning": "Requires human review due to critical GSTIN, arithmetic, and vendor policy issues.",
+      "timestamp": "2026-05-07T07:50:52.572611Z",
+      "confidence": 0.85
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "candidate_name": "V VIJAI",
+  "total_checks_implemented": 10,
+  "checks": {
+    "A1": {"implemented": true, "priority": "HIGH", "notes": "Regex + pattern validation for invoice numbers"},
+    "A2": {"implemented": true, "priority": "HIGH", "notes": "Cross-invoice dedup via (vendor_gstin, invoice_number, amount) hash"},
+    "B1": {"implemented": true, "priority": "HIGH", "notes": "15-char alphanumeric GSTIN format validation"},
+    "B7": {"implemented": true, "priority": "HIGH", "notes": "CGST+SGST=IGST rate validation with intra/inter-state logic"},
+    "C1": {"implemented": true, "priority": "HIGH", "notes": "Line item quantity x rate = amount check (±₹1 tolerance)"},
+    "C2": {"implemented": true, "priority": "HIGH", "notes": "Subtotal matches sum of line items check (±₹1 tolerance)"},
+    "D1": {"implemented": true, "priority": "HIGH", "notes": "TDS applicability based on vendor type & threshold"},
+    "D2": {"implemented": true, "priority": "HIGH", "notes": "Section determination (194C/194J/194I/194Q/195) via rule engine"},
+    "E1": {"implemented": true, "priority": "HIGH", "notes": "Invoice within PO amount tolerance (±5% or ±₹1000)"},
+    "E3": {"implemented": true, "priority": "HIGH", "notes": "Approved vendor list & GSTIN active status check"}
+  }
+}
